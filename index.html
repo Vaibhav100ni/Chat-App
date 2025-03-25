@@ -188,7 +188,8 @@
         }
 
         function startWebSocket(room) {
-            ws = new WebSocket(`ws://localhost:3000?room=${room}`);
+            ws = new WebSocket("wss://backend-e83g.onrender.com/?room=" + roomId);
+
 
             ws.onopen = () => {
                 ws.send(JSON.stringify({ type: "join", room: roomId, userId, username }));
